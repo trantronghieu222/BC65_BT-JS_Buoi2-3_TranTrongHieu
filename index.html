@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font awe-some -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <style>
+      section {
+        min-height: 100vh;
+      }
+      section h1 {
+        text-align: center;
+        padding: 20px 0;
+      }
+      .result {
+        width: 100%;
+        height: 50px;
+        margin: 20px 0;
+        padding: 10px;
+        border: 1px solid green;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <h1>Bài 1: Tính tiền lương nhân viên</h1>
+        <div class="form-group">
+          <label for="ngayLam"></label>
+          <input
+            type="number"
+            name="ngayLam"
+            id="ngayLam"
+            class="form-control"
+            placeholder="Số ngày làm"
+            aria-describedby="helpId"
+          />
+        </div>
+        <div class="form-group">
+          <label for="ngayLuong"></label>
+          <input
+            type="number"
+            name="ngayLuong"
+            id="ngayLuong"
+            class="form-control"
+            placeholder="Lương một ngày"
+            aria-describedby="helpId"
+          />
+        </div>
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="handleTinhLuong()"
+        >
+          Tính lương
+        </button>
+        <div id="bai1__result" class="result"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h1>Bài 2: Tính giá trị trung bình</h1>
+        <div class="form-group">
+          <label for="so1"></label>
+          <input
+            type="number"
+            name="so1"
+            id="so1"
+            class="form-control"
+            placeholder="Số 1"
+            aria-describedby="helpId"
+          />
+        </div>
+        <div class="form-group">
+          <label for="so2"></label>
+          <input
+            type="number"
+            name="so2"
+            id="so2"
+            class="form-control"
+            placeholder="Số 2"
+            aria-describedby="helpId"
+          />
+        </div>
+        <div class="form-group">
+          <label for="so3"></label>
+          <input
+            type="number"
+            name="so3"
+            id="so3"
+            class="form-control"
+            placeholder="Số 3"
+            aria-describedby="helpId"
+          />
+        </div>
+        <div class="form-group">
+          <label for="so4"></label>
+          <input
+            type="number"
+            name="so4"
+            id="so4"
+            class="form-control"
+            placeholder="Số 4"
+            aria-describedby="helpId"
+          />
+        </div>
+        <div class="form-group">
+          <label for="so5"></label>
+          <input
+            type="number"
+            name="so5"
+            id="so5"
+            class="form-control"
+            placeholder="Số 5"
+            aria-describedby="helpId"
+          />
+        </div>
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="handleTinhTrungBinh()"
+        >
+          Tính trung bình
+        </button>
+        <div id="bai2__result" class="result"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h1>Bài 3: Quy đổi tiền</h1>
+        <div class="form-group">
+          <label for="usd"></label>
+          <input
+            type="number"
+            name="usd"
+            id="usd"
+            class="form-control"
+            placeholder="Nhập số tiền USD"
+            aria-describedby="helpId"
+          />
+        </div>
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="handleUsdToVnd()"
+        >
+          Quy đổi tiền
+        </button>
+        <div id="bai3__result" class="result"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h1>Bài 4: Tính diện tích, chu vi hình chữ nhật</h1>
+        <div class="form-group">
+          <label for="chieuDai"></label>
+          <input
+            type="number"
+            name="chieuDai"
+            id="chieuDai"
+            class="form-control"
+            placeholder="Nhập chiều dài"
+            aria-describedby="helpId"
+          />
+        </div>
+        <div class="form-group">
+          <label for="chieuRong"></label>
+          <input
+            type="number"
+            name="chieuRong"
+            id="chieuRong"
+            class="form-control"
+            placeholder="Nhập chiều rộng"
+            aria-describedby="helpId"
+          />
+        </div>
+        <button type="button" class="btn btn-primary" onclick="handleTinh()">
+          Tính
+        </button>
+        <div id="bai4__result" class="result"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h1>Tính tổng 2 ký số</h1>
+        <div class="form-group">
+          <label for="number"></label>
+          <input
+            type="number"
+            name="number"
+            id="number"
+            class="form-control"
+            placeholder="Nhập số có 2 chữ số"
+            aria-describedby="helpId"
+          />
+        </div>
+        <button type="button" class="btn btn-primary" onclick="handleTongKySo()">
+          Tính tổng
+        </button>
+        <div id="bai5__result" class="result"></div>
+      </div>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Script JS -->
+    <script src="./JS/script.js"></script>
+  </body>
+</html>
